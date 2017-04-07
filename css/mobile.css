@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,a,li,img,dt,dl,dd,h1,h2,h3,h4,h5,h6,h7,input,p,form{margin:0px;padding:0px;}
+input{font-family:"Arial","微软雅黑";}
+body, html{ height:100%;}
+body{font-family:"Arial","微软雅黑"; line-height:1.5; color:#878787; font-size:12px; background:#f4f4f4;}
+img{vertical-align:top;width:100%;}
+ul{list-style:none;}
+a{ text-decoration:none; color:#323232;blr:expression(this.onFocus=this.blur());outline:none;-webkit-tap-highlight-color:transparent;}
+a:hover{ color:#ff6b13;}
+.centerbody{ padding:45px 0 0 0;}
+.red-txt{ color:#fa2731;}
+.weui_navbar + .weui_tab_bd{ padding-bottom:56px;}
+input:focus{outline: none; }
+/*底部menu*/
+.bottom-menu:before{border-top:1px solid #e0e0e0; }
+.bottom-menu{z-index:9; padding:0.6rem 0 0.2rem 0; background:#FFF; font-size:0.7rem;overflow:hidden;}
+.bottom-menu ul{ width:100%;}
+.bottom-menu ul li{ float:left; width:20%; text-align:center;}
+.bottom-menu ul li a.now,.bottom-menu ul li a.now span{ color:#ff6b13;}
+.bottom-menu ul li span.titleico{ position:relative; font-size:1rem; padding:0 0 0.2rem 0;}
+.bottom-menu ul li span.titleico em{ background:#ff0000;border-radius:14px; position:absolute; top:-4px; right:-9px; display:block; width:14px; height:14px; line-height:14px; text-align:center; font-size:0.5rem; font-style:inherit; color:#FFF; }
+/*首页搜索*/
+.frame{ top:0; left:0; right:0; z-index:9; padding:8px 50px 8px 10px;}
+.frame form{background:url(../images/Search2.png) 10px 51% no-repeat; background-color:rgba(255,255,255,0.5);background-size:30px auto;border-radius: 15px;height:24px;overflow: hidden;padding: 6px 0 0 50px;}
+.frame .hd_search_txt { background:none; border:none; display: block;height: 20px;line-height: 20px; width: 100%; color:#fff; font-size:0.7rem;}
+.frame .hd_me{ position:absolute; top:8px; right:10px;}
+.frame .hd_me a {color: #fff;display: block;  height: 30px; width:30px; background:url(../images/informationico2.png) no-repeat;background-size:100% 100%;}
+.frame .hd_me span{ background:#ff0000;border-radius:5px; position:absolute; top:0; right:-3px; display:block; width:5px; height:5px; }
+.header .frameScroll{ background:#FFF; border-bottom:1px solid #e0e0e0; position:fixed; top:0; left:0; right:0; z-index:9; padding:8px 50px 8px 10px;}
+.header .frameScroll form{ position:relative; background:#ededed url(../images/Search.png) 10px 51% no-repeat;background-size:30px auto;border-radius: 15px;height:24px;overflow: hidden;padding: 6px 0 0 50px;}
+.header .frameScroll .hd_search_txt {border:none; display: block;height: 20px;line-height: 20px; width: 100%; color:#a2a1a1; font-size:0.7rem;}
+.header .frameScroll .hd_search_txt:focus{ color:#323232;}
+.header .frameScroll .hd_me{ position:absolute; top:8px; right:10px;}
+.header .frameScroll .hd_me a {color: #fff;display: block;  height: 30px; width:30px; background:url(../images/informationico.png) no-repeat;background-size:100% 100%;}
+.header .frameScroll .hd_me span{ background:#ff0000;border-radius:5px; position:absolute; top:0; right:-3px; display:block; width:5px; height:5px; }
+/*搜索页*/
+.he-search{ background:#f4f4f4; padding:0 0 5px 0; height:50px; overflow:hidden;}
+.he-search .hd_search_clear{ background:#ededed;border-radius:0 15px 15px 0; position:absolute; top:0; right:0; font-size:0.8rem; height:30px; line-height:30px; padding:0 10px 0 5px; color:#c1bfbf; }
+.he-search .hd_search_clear:active{ color:#323232;}
+.he-search .hd_button{ position:absolute; top:8px; right:5px;}
+.he-search .hd_button a.hd_search_btn_blue{ background:#ff6b13; border-radius: 3px; color: #fff;display: block; font-size:0.7rem; height: 30px;line-height: 30px; padding: 0 5px;}
+.he-search .frameScroll{ background:#FFF; border-bottom:none; position:fixed; top:0; left:0; right:0; z-index:9; padding:8px 50px 8px 10px;}
+.he-search .frameScroll form{ position:relative; background:#ededed url(../images/Search.png) 10px 51% no-repeat;background-size:30px auto;border-radius: 15px;height:24px;overflow: hidden;padding: 6px 0 0 50px;}
+.he-search .frameScroll .hd_search_txt {border:none; display: block;height: 20px;line-height: 20px; width: 100%; color:#a2a1a1; font-size:0.7rem;}
+.he-search .frameScroll .hd_search_txt:focus{ color:#323232;}
+.he-search .frameScroll .hd_me{ position:absolute; top:8px; right:10px;}
+.he-search .frameScroll .hd_me a {color: #fff;display: block;  height: 30px; width:30px; background:url(../images/informationico.png) no-repeat;background-size:100% 100%;}
+.he-search .frameScroll .hd_me span{ background:#ff0000;border-radius:5px; position:absolute; top:0; right:-3px; display:block; width:5px; height:5px; }
+.weui_tab_bd.searchbody{ padding:55px 10px 0 10px; background:#FFF;}
+.searchbody .search_text{ color:#323232; font-size:0.7rem; padding:12px 0 6px 0;}
+.searchbody .search_panel_con{ font-size:0.6rem; overflow:hidden;}
+.searchbody .search_panel_con ul li.keyword{ float:left; margin:0 10px 10px 0; height:30px; line-height:30px;}
+.searchbody .search_panel_con ul li.keyword a{ display:block; border-radius: 3px; background:#f5f5f5; padding:0 10px;}
+.searchbody .search_panel_con ul li.keyword a:hover,.searchbody .search_panel_con ul li.keyword a:active{ background:#ff6b13; color:#fff;}
+.searchbody .search_del{ font-size:0.7rem; padding:20px 0; text-align:center;}
+.searchbody .search_del a{ display:inline-block; border:1px solid #323232; border-radius: 3px; padding:8px 15px 6px;}
+.searchbody .search_del a:active,.searchbody .search_del a:hover{ background:#ff6b13; border:1px solid #ff6b13; color:#FFF;}
+.searchbody .search_del span{ display:inline-block; float:left; padding:0 6px 0 0 ; font-size:1rem;}
+.search-no{ text-align:center; padding:60px 0 0 0;}
+.search-no dl dt{ font-size:3.2rem; color:#d7d7d7;}
+.search-no dl dd{ font-size:0.9rem; color:#a2a1a1; padding:15px 0 0 0;}

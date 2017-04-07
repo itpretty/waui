@@ -1,3 +1,3 @@
 ![WAUI](https://raw.githubusercontent.com/itpretty/waui/master/doc/logo-waui.png)
-# WAUI
+# WA UI
 A Vue UI Simply for Web App

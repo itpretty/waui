@@ -1,0 +1,9 @@
+{
+  "todoList": [
+    {"href": "index.html", "class": "icon-ico8", "navName": "首页"},
+    {"href": "ification.html", "class": "icon-ico9", "navName": "分类"},
+    {"href": "http://www.baidu.com", "class": "icon-ico10", "navName": "大麦场"},
+    {"href": "shoppingCar.html", "class": "icon-ico11", "navName": "购物车"},
+    {"href": "login.html", "class": "icon-ico12", "navName": "我的"}
+  ]
+}

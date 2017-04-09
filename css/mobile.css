@@ -15,8 +15,8 @@ input:focus{outline: none; }
 /*底部menu*/
 .bottom-menu:before{border-top:1px solid #e0e0e0; }
 .bottom-menu{z-index:9; padding:0.6rem 0 0.2rem 0; background:#FFF; font-size:0.7rem;overflow:hidden;}
-.bottom-menu ul{ width:100%;}
-.bottom-menu ul li{ float:left; width:20%; text-align:center;}
+.bottom-menu ul{ width:100%; display: flex;}
+.bottom-menu ul li{ float:left; flex: 1; text-align:center;}
 .bottom-menu ul li a.now,.bottom-menu ul li a.now span{ color:#ff6b13;}
 .bottom-menu ul li span.titleico{ position:relative; font-size:1rem; padding:0 0 0.2rem 0;}
 .bottom-menu ul li span.titleico em{ background:#ff0000;border-radius:14px; position:absolute; top:-4px; right:-9px; display:block; width:14px; height:14px; line-height:14px; text-align:center; font-size:0.5rem; font-style:inherit; color:#FFF; }

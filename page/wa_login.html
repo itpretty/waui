@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../lib/weui/css/weui.css">
+    <link rel="stylesheet" href="../lib/jquery-ui/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/mobile.css"/>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="wa-login">
+    <!--find-pass-word:找回密码按钮的链接
+    login-page：登陆按钮的链接-->
+    <!--<input class="weui-input" type="password" v-va:Password tag="登录密码" v-model.trim="Password" placeholder="请输入登录密码" >-->
+    <!--<validator name="validation">-->
+        <!--<label for="username">telphone:</label>-->
+        <!--<input type="text" id="tel" v-validate:telphone="{ pattern: '/^[0-9]{11}$/' }">-->
+        <!--<div class="">-->
+            <!--<p v-if="$validation.telphone.pattern">您输入的手机号码不对</p>-->
+        <!--</div>-->
+    <!--</validator>-->
+    <!--<wa-login phone-text="请输入手机号码" veri-code-text="输入验证码" find-pass-word="Password.html" login-page="membercenter.html"></wa-login>-->
+    <validator name="validationLogin">
+        <div class="member">
+        <div class="member-logo"><img :src="loginSrcImg" alt=""/></div>
+        <div class="member-form">
+            <div class="member-table login ">
+                <dl class="line">
+                    <dt><span class="icon-ico24"></span></dt>
+                    <dd>
+                        <input name="textfield" type="text" class="Memberin" id="textfield1" :placeholder="phonePlaceholderText"  v-validate:tel-phone="['telphone']" >
+                        <!--<p v-if="$validation.telphone.pattern">您输入的手机号码不对</p>-->
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><span class="icon-ico25"></span></dt>
+                    <dd style="padding-right:4rem"><a :href="findPassWord"  class="login-password">找回密码</a>
+                        <input name="textfield" type="text" class="Memberin" id="textfield" :placeholder="VeriCodePlaceholderText" v-validate:veri-code="['vericode']">
+                    </dd>
+                </dl>
+            </div>
+            <div class="dmc-btn">
+                <a href="javascript:;"  @click="loginMethods"  class="dmc-btn-dark">登 录</a>
+                <a  class="dmc-btn-positive">登 录</a>
+            </div>
+            <div class="error">
+                <p class="red-error" v-if="$validationLogin.telPhone.telphone">请输入正确的手机号</p>
+                <p class="red-error" v-if="$validationLogin.veriCode.vericode">验证码错误</p>
+            </div>
+        </div>
+        <div class="findPwd-text"><a :href=reg class="dmc-btnan">免费注册</a><a href="#">手机号快捷登录</a></div>
+    </div>
+    </validator>
+</div>
+<script src="../js/jquery-2.1.4.js"></script>
+<script src="../js/fastclick.js"></script>
+<script src="../js/zepto.js"></script>
+<!--<script src="../js/wa_Component.js"></script>-->
+<script src="../js/vue.js"></script>
+<script src="../js/vue-validator.min.js"></script>
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    var waLogin=new Vue({
+        el: '#wa-login',
+        data:{
+            phonePlaceholderText:'请输入手机号码',
+            VeriCodePlaceholderText:'请输入验证码',
+            findPassWord:"Password.html",//找回密码的链接
+            reg:"reg.html",//注册页面的链接
+            loginSrcImg:"../images/member-logo.png"//登录页面login
+        },
+        validators: {
+            telphone: function (val) {
+                return /^[0-9]{11}$/.test(val);
+            },
+            vericode: function (val) {
+                return /^\d{6}$/.test(val);
+            }
+        },
+        methods:{
+            loginMethods:function () {
+                var self = this;
+                self.$validate(true,function () {
+                    /*如果所有条件都是false*/
+                    if(self.$validationLogin.valid){
+                        console.log("登录成功");
+                    }
+                })
+            }
+        }
+    });
+</script>
+<script src="../lib/jquery-ui/js/jquery-weui.js"></script>
+</body>
+</html>

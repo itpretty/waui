@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../lib/weui/css/weui.css">
+    <link rel="stylesheet" href="../lib/jquery-ui/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/mobile.css"/>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="wa-register">
+    <validator name="validationRegister">
+        <div class="member">
+            <div class="member-form">
+                <div class="member-table">
+                    <dl>
+                        <dd>
+                            <input name="textfield" type="text" v-model="youTelphone" class="Memberin" id="textfield" :placeholder="phonePlaceholderText" v-validate:tel-phone="['telphone']">
+                        </dd>
+                    </dl>
+                </div>
+                <div class="dmc-btn"><a href="javascript:;" @click="registerMethods" class="dmc-btn-dark">下一步</a> <a href="reg2.html" class="dmc-btn-positive">下一步</a></div>
+            </div>
+            <div class="error">
+                <p class="red-error" v-if="$validationRegister.telPhone.telphone">请输入正确的手机号</p>
+            </div>
+            <div class="red-txt">已有账号？<a :href="loginPage">登录</a></div>
+        </div>
+    </validator>
+</div>
+<script src="../js/jquery-2.1.4.js"></script>
+<script src="../js/fastclick.js"></script>
+<script src="../js/zepto.js"></script>
+<script src="../js/wa_Component.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/vue-validator.min.js"></script>
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    var waLogin=new Vue({
+        el: '#wa-register',
+        data:{
+            phonePlaceholderText:'请输入中国大陆手机号码',
+            youTelphone:'',
+            loginPage:"wa_login.html",
+            goPage:"wa_registerContent.html"
+        },
+        validators: {
+            telphone: function (val) {
+                return /^[0-9]{11}$/.test(val);
+            }
+        },
+        methods:{
+            registerMethods:function () {
+                var self = this;
+                self.$validate(true,function () {
+                    /*如果所有条件都是false*/
+                    if(self.$validationRegister.valid){
+                        console.log("登录成功");
+                        if(!window.localStorage){
+                            console.log("浏览器不支持localstorage");
+                            return false;
+                        }else{
+                            var storage=window.localStorage;
+                            storage["telphone"]=self.youTelphone;//保存搜索字段，在下个页面获取
+                            console.log(storage.getItem("telphone"));
+
+                        }
+                        window.open(self.goPage)
+                    }
+                })
+            }
+        }
+    });
+</script>
+<script src="../lib/jquery-ui/js/jquery-weui.js"></script>
+</body>
+</html>

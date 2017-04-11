@@ -87,8 +87,8 @@
       <file leaf-file-name="wa_register.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/wa_register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="313">
+              <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -389,15 +389,15 @@
       <workItem from="1491713409444" duration="5532000" />
       <workItem from="1491788026513" duration="31926000" />
       <workItem from="1491871947253" duration="10096000" />
-      <workItem from="1491889391150" duration="11463000" />
+      <workItem from="1491889391150" duration="11647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114829000" />
+    <option name="totallyTimeSpent" value="115013000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="176" y="156" width="1638" height="685" extended-state="1" />
+    <frame x="176" y="156" width="1638" height="685" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2108508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -762,8 +762,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/wa_register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="313">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
           <folding />
         </state>
       </provider>

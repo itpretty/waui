@@ -60,3 +60,36 @@ input:focus{outline: none; }
 .search-no{ text-align:center; padding:60px 0 0 0;}
 .search-no dl dt{ font-size:3.2rem; color:#d7d7d7;}
 .search-no dl dd{ font-size:0.9rem; color:#a2a1a1; padding:15px 0 0 0;}
+/*会员登陆 注册 找回密码*/
+.member{ padding:10px 15px;}
+.member-logo{ padding:1rem 3.7rem;}
+.member-table{border-radius:4px; border:1px solid #bfbfbf; background:#FFF; margin:0 0 10px 0;}
+.member-table dl.line{ border-bottom:1px solid #ccc;}
+.member-table dl{position:relative;padding:0 10px 0 0;}
+.member-table.login dl{padding-left:1.4rem;}
+.member-table dl dt{ position:absolute; left:0.4rem; top:0.6rem; font-size:0.76rem; padding:1px 0 0 0;}
+.member-table dl dt span{ display:inline-block; font-size:1rem; olor:#878686;}
+.member-table dl dd{ position:relative; padding:0.6rem 0 0.6rem 0.5rem; overflow:hidden;}
+.member-table dl dd a.login-password{ display:block; border:1px solid #bababa;border-radius:4px; position:absolute; top:0.6rem; right:0; width:3.9rem; line-height:1.2rem; text-align:center; font-size:0.7rem; color:#959595;}
+.member-table dl dd a.login-password:hover,.member-table dl dd a.login-password:active{ background:#ff6b13; border:1px solid #ff6b13; color:#FFF;}
+.Memberin{ border:none; width:100%;color:#b5b5b7; font-size:0.76rem; line-height:1.2rem;}
+.Memberin:focus{ color:#323232;}
+.member .findPwd-text{ padding:10px 0 0 0; font-size:0.7rem;}
+.member .findPwd-text a{ color:#959595;}
+.member .findPwd-text a:hover,.member .findPwd-text a:active{ color:#ff6b13;}
+.member .findPwd-text .dmc-btnan{ float:right;}
+.membertxt{ color:#323232; padding:10px 0; font-size:0.7rem;}
+.member-table.member-info dl{padding-left:3.6rem;}
+.member-table.member-info dl dd span.getimgcode{ display:block; background:#a5a4a4; border-radius:4px; position:absolute; top:0.6rem; right:0;line-height:1.2rem; text-align:center; font-size:0.6rem; color:#959595; padding:0 5px; color:#FFF;}
+.red-txt{ text-align:right; padding:10px 0 0 0; font-size:0.7rem;color:#959595;line-height:1.2rem; overflow:hidden;}
+.red-txt a{ display:inline-block; border:1px solid #ec6822;border-radius:4px; color:#ff6b13; padding:0 0.5rem; margin:0 0 0 5px;}
+.red-txt a:hover,.red-txt a:active{ background:#ff6b13; border:1px solid #ff6b13; color:#FFF;}
+.member-table.member-reg dl{padding-left:4.6rem;}
+.member-regtxt{ font-size:0.7rem; padding:0 0 12px 0;}
+.member-regtxt a{ color:#ff6b13;}
+/*会员注册*/
+.dmc-btn a{ display:block; border-radius:4px; font-size: 0.86rem;height: 2.2rem;line-height: 2.2rem; text-align:center; color:#FFF;}
+.dmc-btn a.dmc-btn-dark{ background:#a5a4a4;}
+.dmc-btn a.dmc-btn-positive{ background:#ff6b13;}
+/*表单验证错误信息*/
+#error p.red-error{font-size:0.7rem;color:#e33030;line-height:1.2rem;}

@@ -99,7 +99,7 @@ Vue.component('wa-footer-nav', {
     props: ["navList"],
     methods: {
         goPage:function (index) {
-            alert(this.navList[index].href)
+            console.log(this.navList[index].href)
             if(this.navList[index].href!="null"){//如果有跳转地址
                 window.open(this.navList[index].href);
             }else{//如果不跳转执行原生方法
@@ -110,12 +110,19 @@ Vue.component('wa-footer-nav', {
     }
 })
 
+/*海报*/
+Vue.component('wa-img', {
+    template: '<div class="poster"><a :href="href"><img :src="src" alt=""/></a></div>',
+    props: ["src","href"]
+})
 /*创建根实例*/
 new Vue({
     el: '#waui',
     data: {
         footerData: [],//底部导航的数据
-        tId:0
+        tId:0,
+        imgurl:"../images/dmc-banner.jpg",
+        goPage:"page.html"
     },
     methods:{
         waNativeSearch:function () {//定义搜索按钮的原生方法

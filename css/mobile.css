@@ -4,7 +4,7 @@ body,ul,a,li,img,dt,dl,dd,h1,h2,h3,h4,h5,h6,h7,input,p,form{margin:0px;padding:0
 input{font-family:"Arial","微软雅黑";}
 body, html{ height:100%;}
 body{font-family:"Arial","微软雅黑"; line-height:1.5; color:#878787; font-size:12px; background:#f4f4f4;}
-img{vertical-align:top;width:100%;}
+img{vertical-align:top;max-width:100%;}
 ul{list-style:none;}
 a{ text-decoration:none; color:#323232;blr:expression(this.onFocus=this.blur());outline:none;-webkit-tap-highlight-color:transparent;}
 a:hover{ color:#ff6b13;}
@@ -92,4 +92,6 @@ input:focus{outline: none; }
 .dmc-btn a.dmc-btn-dark{ background:#a5a4a4;}
 .dmc-btn a.dmc-btn-positive{ background:#ff6b13;}
 /*表单验证错误信息*/
-#error p.red-error{font-size:0.7rem;color:#e33030;line-height:1.2rem;}
+.error p.red-error{font-size:0.7rem;color:#e33030;line-height:1.2rem;}
+/*海报下面的图片*/
+/*#poster_img{max-width: 100%!important; border: 2px solid red}*/

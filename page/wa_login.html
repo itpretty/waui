@@ -45,8 +45,8 @@
                 </dl>
             </div>
             <div class="dmc-btn">
-                <a href="javascript:;"  @click="loginMethods"  class="dmc-btn-dark">登 录</a>
-                <a  class="dmc-btn-positive">登 录</a>
+                <a  v-if="$validationLogin.invalid" class="dmc-btn-dark">登 录</a>
+                <a href="javascript:;"  @click="loginMethods" class="dmc-btn-positive" v-if="$validationLogin.valid">登 录</a>
             </div>
             <div class="error">
                 <p class="red-error" v-if="$validationLogin.telPhone.telphone">请输入正确的手机号</p>

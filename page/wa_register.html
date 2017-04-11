@@ -24,7 +24,7 @@
                         </dd>
                     </dl>
                 </div>
-                <div class="dmc-btn"><a href="javascript:;" @click="registerMethods" class="dmc-btn-dark">下一步</a> <a href="reg2.html" class="dmc-btn-positive">下一步</a></div>
+                <div class="dmc-btn"><a  v-if="$validationRegister.invalid" class="dmc-btn-dark">下一步</a> <a href="javascript:;" @click="registerMethods" class="dmc-btn-positive" v-if="$validationRegister.valid">下一步</a></div>
             </div>
             <div class="error">
                 <p class="red-error" v-if="$validationRegister.telPhone.telphone">请输入正确的手机号</p>

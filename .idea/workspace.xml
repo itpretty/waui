@@ -24,7 +24,7 @@
       <file leaf-file-name="wa_Component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/wa_Component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="-324">
               <caret line="107" column="13" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
               <folding>
                 <marker date="1491896392925" expanded="true" signature="546:612" placeholder="..." />
@@ -43,8 +43,8 @@
       <file leaf-file-name="wa_img.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/wa_img.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="152">
+              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -65,8 +65,8 @@
       <file leaf-file-name="wa_login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/wa_login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1097">
-              <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+            <state relative-caret-position="375">
+              <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#dd#0;n#dl#1;n#div#0;n#div#1;n#div#0;n#validator#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -74,21 +74,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wa_register.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wa_register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/wa_register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="256">
+              <caret line="26" column="75" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wa_registerContent.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wa_registerContent.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/wa_registerContent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="356">
+              <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -166,10 +166,10 @@
         <option value="$PROJECT_DIR$/page/wa_img.html" />
         <option value="$PROJECT_DIR$/js/vue.js" />
         <option value="$PROJECT_DIR$/js/vue-validator.min.js" />
-        <option value="$PROJECT_DIR$/page/wa_registerContent.html" />
         <option value="$USER_HOME$/.gitconfig" />
         <option value="$PROJECT_DIR$/page/wa_login.html" />
         <option value="$PROJECT_DIR$/page/wa_register.html" />
+        <option value="$PROJECT_DIR$/page/wa_registerContent.html" />
       </list>
     </option>
   </component>
@@ -179,8 +179,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="249" />
-    <option name="y" value="98" />
+    <option name="x" value="45" />
+    <option name="y" value="79" />
     <option name="width" value="1638" />
     <option name="height" value="685" />
   </component>
@@ -380,15 +380,15 @@
       <workItem from="1491713409444" duration="5532000" />
       <workItem from="1491788026513" duration="31926000" />
       <workItem from="1491871947253" duration="10096000" />
-      <workItem from="1491889391150" duration="13127000" />
+      <workItem from="1491889391150" duration="15588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116493000" />
+    <option name="totallyTimeSpent" value="118954000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="249" y="98" width="1638" height="685" extended-state="0" />
+    <frame x="45" y="79" width="1638" height="685" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2108508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -664,23 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/wa_Component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="107" column="13" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
-          <folding>
-            <marker date="1491896392925" expanded="true" signature="546:612" placeholder="..." />
-            <marker date="1491896392925" expanded="true" signature="1067:1096" placeholder="..." />
-            <marker date="1491896392925" expanded="true" signature="1097:1383" placeholder="..." />
-            <marker date="1491896392925" expanded="true" signature="1125:1277" placeholder="..." />
-            <marker date="1491896392925" expanded="true" signature="1137:1273" placeholder="..." />
-            <marker date="1491896392925" expanded="true" signature="2031:2440" placeholder="..." />
-            <marker date="1491896392925" expanded="true" signature="2068:2428" placeholder="..." />
-            <marker date="1491896392925" expanded="true" signature="2080:2302" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/vue-validator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -695,14 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/wa_img.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -725,14 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/wa_registerContent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.gitconfig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -741,10 +708,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/page/wa_img.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/wa_Component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="107" column="13" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
+          <folding>
+            <marker date="1491896392925" expanded="true" signature="546:612" placeholder="..." />
+            <marker date="1491896392925" expanded="true" signature="1067:1096" placeholder="..." />
+            <marker date="1491896392925" expanded="true" signature="1097:1383" placeholder="..." />
+            <marker date="1491896392925" expanded="true" signature="1125:1277" placeholder="..." />
+            <marker date="1491896392925" expanded="true" signature="1137:1273" placeholder="..." />
+            <marker date="1491896392925" expanded="true" signature="2031:2440" placeholder="..." />
+            <marker date="1491896392925" expanded="true" signature="2068:2428" placeholder="..." />
+            <marker date="1491896392925" expanded="true" signature="2080:2302" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/page/wa_login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1097">
-          <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+        <state relative-caret-position="375">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#dd#0;n#dl#1;n#div#0;n#div#1;n#div#0;n#validator#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -753,8 +745,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/wa_register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="256">
+          <caret line="26" column="75" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/wa_registerContent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding />
         </state>
       </provider>

@@ -51,7 +51,7 @@
                     <p class="red-error" v-if="$validationRegisterCon.newpassword.match">确认密码和密码不一致</p>
                     <p class="red-error" v-if="$validationRegisterCon.recommendphone.recomphone">必须为11位数字</p>
                 </div>
-                <div class="dmc-btn"><a href="javascript:;" class="dmc-btn-dark" @click="registerSucc">完 成</a> <a href="login.html" class="dmc-btn-positive">完 成</a></div>
+                <div class="dmc-btn"><a class="dmc-btn-dark" v-if="$validationRegisterCon.invalid" >完 成</a> <a href="javascript:;" @click="registerSucc" v-if="$validationRegisterCon.valid" class="dmc-btn-positive">完 成</a></div>
             </div>
         </div>
     </validator>
@@ -89,6 +89,7 @@
                 return /^[\da-zA-z]{6,12}$/.test(val);
             },
             match:function (val,result) {
+                console.log(val+"/"+result)
                 return result;
             },
             recomphone:function (val) {
@@ -109,7 +110,10 @@
         },
         computed:{
             matchPassword:function () {
-                return this.password == this.newpassword
+                //alert(this.password.length)
+                if(this.password.length>0){
+                    return this.password == this.newpassword
+                }
             }
         },
         created:function () {

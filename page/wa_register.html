@@ -20,14 +20,11 @@
                 <div class="member-table">
                     <dl>
                         <dd>
-                            <input name="textfield" type="text" v-model="youTelphone" class="Memberin" id="textfield" :placeholder="phonePlaceholderText" v-validate:tel-phone="['telphone']">
+                            <input name="textfield" type="text" v-model="youTelphone" class="Memberin" id="textfield" :placeholder="phonePlaceholderText" v-validate:telphone="['telphone']">
                         </dd>
                     </dl>
                 </div>
-                <div class="dmc-btn"><a  v-if="$validationRegister.invalid" class="dmc-btn-dark">下一步</a> <a href="javascript:;" @click="registerMethods" class="dmc-btn-positive" v-if="$validationRegister.valid">下一步</a></div>
-            </div>
-            <div class="error">
-                <p class="red-error" v-if="$validationRegister.telPhone.telphone">请输入正确的手机号</p>
+                <div class="dmc-btn"><a href="javascript:;" @click="registerMethods" :class="{'dmc-btn-positive': $validationRegister.valid, 'dmc-btn-dark': $validationRegister.invalid}">下一步</a></div>
             </div>
             <div class="red-txt">已有账号？<a :href="loginPage">登录</a></div>
         </div>
@@ -73,6 +70,10 @@
 
                         }
                         window.open(self.goPage)
+                    }else{
+                        if(self.$validationRegister.telphone.telphone){
+                            $.alert("手机号码不正确！")
+                        }
                     }
                 })
             }

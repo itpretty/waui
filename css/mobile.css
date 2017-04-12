@@ -91,7 +91,5 @@ input:focus{outline: none; }
 .dmc-btn a{ display:block; border-radius:4px; font-size: 0.86rem;height: 2.2rem;line-height: 2.2rem; text-align:center; color:#FFF;}
 .dmc-btn a.dmc-btn-dark{ background:#a5a4a4;}
 .dmc-btn a.dmc-btn-positive{ background:#ff6b13;}
-/*表单验证错误信息*/
-.error p.red-error{font-size:0.7rem;color:#e33030;line-height:1.2rem;}
 /*海报下面的图片*/
 /*#poster_img{max-width: 100%!important; border: 2px solid red}*/

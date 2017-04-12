@@ -33,24 +33,19 @@
                 <dl class="line">
                     <dt><span class="icon-ico24"></span></dt>
                     <dd>
-                        <input name="textfield" type="text" class="Memberin" id="textfield1" :placeholder="phonePlaceholderText"  v-validate:tel-phone="['telphone']" >
+                        <input name="textfield" type="text" class="Memberin" id="phone" :placeholder="phonePlaceholderText"  v-validate:telphone="['telphone']" >
                         <!--<p v-if="$validation.telphone.pattern">您输入的手机号码不对</p>-->
                     </dd>
                 </dl>
                 <dl>
                     <dt><span class="icon-ico25"></span></dt>
                     <dd style="padding-right:4rem"><a :href="findPassWord"  class="login-password">找回密码</a>
-                        <input name="textfield" type="text" class="Memberin" id="textfield" :placeholder="VeriCodePlaceholderText" v-validate:veri-code="['vericode']">
+                        <input name="textfield" type="text" class="Memberin" id="vericode"  :placeholder="VeriCodePlaceholderText" v-validate:vericode="['vericode']">
                     </dd>
                 </dl>
             </div>
             <div class="dmc-btn">
-                <a  v-if="$validationLogin.invalid" class="dmc-btn-dark">登 录</a>
-                <a href="javascript:;"  @click="loginMethods" class="dmc-btn-positive" v-if="$validationLogin.valid">登 录</a>
-            </div>
-            <div class="error">
-                <p class="red-error" v-if="$validationLogin.telPhone.telphone">请输入正确的手机号</p>
-                <p class="red-error" v-if="$validationLogin.veriCode.vericode">验证码错误</p>
+                <a href="javascript:;"  @click="loginMethods" :class="{'dmc-btn-positive': $validationLogin.valid, 'dmc-btn-dark': $validationLogin.invalid}">登 录</a>
             </div>
         </div>
         <div class="findPwd-text"><a :href=reg class="dmc-btnan">免费注册</a><a href="#">手机号快捷登录</a></div>
@@ -74,7 +69,9 @@
             VeriCodePlaceholderText:'请输入验证码',
             findPassWord:"Password.html",//找回密码的链接
             reg:"reg.html",//注册页面的链接
-            loginSrcImg:"../images/member-logo.png"//登录页面login
+            loginSrcImg:"../images/member-logo.png",//登录页面login
+            phoneErrorMsg:false,
+            veriErrorMsg:false
         },
         validators: {
             telphone: function (val) {
@@ -91,6 +88,12 @@
                     /*如果所有条件都是false*/
                     if(self.$validationLogin.valid){
                         console.log("登录成功");
+                    }else{
+                        if(self.$validationLogin.telphone.telphone){
+                            $.alert( '手机号码不正确！');
+                        }else if(self.$validationLogin.vericode.vericode){
+                            $.alert( '验证码不正确！');
+                        }
                     }
                 })
             }

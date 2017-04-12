@@ -45,13 +45,13 @@
                     </dl>
                 </div>
                 <div class="member-regtxt">注册即视为同意<a href="#">《大麦场服务条款》</a></div>
-                <div class="error">
-                    <p class="red-error" v-if="$validationRegisterCon.vericode.vericode">只能是6位数字</p>
-                    <p class="red-error" v-if="$validationRegisterCon.password.integer"> 6-12位数字、字母</p>
-                    <p class="red-error" v-if="$validationRegisterCon.newpassword.match">确认密码和密码不一致</p>
-                    <p class="red-error" v-if="$validationRegisterCon.recommendphone.recomphone">必须为11位数字</p>
-                </div>
-                <div class="dmc-btn"><a class="dmc-btn-dark" v-if="$validationRegisterCon.invalid" >完 成</a> <a href="javascript:;" @click="registerSucc" v-if="$validationRegisterCon.valid" class="dmc-btn-positive">完 成</a></div>
+                <!--<div class="error">-->
+                    <!--<p class="red-error" v-if="$validationRegisterCon.vericode.vericode">只能是6位数字</p>-->
+                    <!--<p class="red-error" v-if="$validationRegisterCon.password.integer"> 6-12位数字、字母</p>-->
+                    <!--<p class="red-error" v-if="$validationRegisterCon.newpassword.match">确认密码和密码不一致</p>-->
+                    <!--<p class="red-error" v-if="$validationRegisterCon.recommendphone.recomphone">必须为11位数字</p>-->
+                <!--</div>-->
+                <div class="dmc-btn"><a href="javascript:;" @click="registerSucc" :class="{'dmc-btn-positive': $validationRegisterCon.valid, 'dmc-btn-dark': $validationRegisterCon.invalid}">完 成</a></div>
             </div>
         </div>
     </validator>
@@ -79,7 +79,8 @@
             newpassword:"",
             matchPassword:false,
             recomphone:'',
-            login:'wa_login.html'
+            login:'wa_login.html',
+            vericode:false,
         },
         validators: {
             vericode: function (val) {
@@ -104,6 +105,16 @@
                     if(self.$validationRegisterCon.valid){
                         console.log("注册成功");
                         window.open(self.login);
+                    }else{
+                        if(self.$validationRegisterCon.vericode.vericode){
+                            $.alert( '验证码不正确！');
+                        }else if(self.$validationRegisterCon.password.integer){
+                            $.alert( '必须为6-12位数字、字母！');
+                        }else if(self.$validationRegisterCon.newpassword.match){
+                            $.alert( '确认密码和密码不一致！');
+                        }else if(self.$validationRegisterCon.recommendphone.recomphone){
+                            $.alert( '手机号码不正确！');
+                        }
                     }
                 })
             }

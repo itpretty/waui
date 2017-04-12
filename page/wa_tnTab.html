@@ -22,9 +22,9 @@
     </div>
     <div class="weui_tab_bd tnTabContent current">
         <div class="pro-list">
-            <div class="prolist1" v-for="(index, item) in waProductList">
+            <div class="prolist1" v-for="(index, item) in waProductListTab0">
                 <!--<div class="prolist-img"><a href=""><img src="" alt=""/></a></div>-->
-                <div class="prolist-img" id="wa_img"><img :src=item.imgurl :href=item.goPage></div>
+                <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
                 <div class="prolist-right"> <a href="detail.html">
                     <div class="prolist-title">{{item.goodsdDescription}}</div>
                 </a>
@@ -37,61 +37,23 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="prolist1">-->
-                <!--<div class="prolist-img"><a href="detail.html"><img src="../images/img18.jpg" alt=""/></a></div>-->
-                <!--<div class="prolist-right"> <a href="detail.html">-->
-                    <!--<div class="prolist-title">靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg</div>-->
-                <!--</a>-->
-                    <!--<div class="listprice">-->
-                        <!--<div class="price-box">-->
-                            <!--<div class="price-txt">已售225件</div>-->
-                        <!--</div>-->
-                        <!--<div class="shop-num"><a href="detail.html" class="cartbutton">加入购物车</a> <span class="e-price">¥ 22.00</span><span class="or-price">¥ 32.00</span> </div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
         </div>
         <div class="No_more">没有更多啦~</div>
     </div>
     <div class="weui_tab_bd tnTabContent">
         <div class="pro-list">
-            <div class="prolist1">
-                <div class="prolist-img"><a href="detail.html"><img src="../images/img18.jpg" alt=""/></a></div>
+            <div class="prolist1" v-for="(index, item) in waProductListTab1">
+                <!--<div class="prolist-img"><a href=""><img src="" alt=""/></a></div>-->
+                <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
                 <div class="prolist-right"> <a href="detail.html">
-                    <div class="prolist-title">靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg</div>
+                    <div class="prolist-title">{{item.goodsdDescription}}</div>
                 </a>
                     <div class="listprice">
                         <div class="price-box">
                             <div class="Mobiletxt"><span class="icon-ico14 Mobileico"></span>专享价</div>
-                            <div class="price-txt">已售225件</div>
+                            <div class="price-txt">{{item.sold}}</div>
                         </div>
-                        <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">¥ 22.00</span><span class="or-price">¥ 32.00</span> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="prolist1">
-                <div class="prolist-img"><a href="detail.html"><img src="../images/img18.jpg" alt=""/></a></div>
-                <div class="prolist-right"> <a href="detail.html">
-                    <div class="prolist-title">靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg</div>
-                </a>
-                    <div class="listprice">
-                        <div class="price-box">
-                            <div class="price-txt">已售225件</div>
-                        </div>
-                        <div class="shop-num"><a href="detail.html" class="cartbutton">加入购物车</a> <span class="e-price">¥ 22.00</span><span class="or-price">¥ 32.00</span> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="prolist1">
-                <div class="prolist-img"><a href="detail.html"><img src="../images/img18.jpg" alt=""/></a></div>
-                <div class="prolist-right"> <a href="detail.html">
-                    <div class="prolist-title">靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg</div>
-                </a>
-                    <div class="listprice">
-                        <div class="price-box">
-                            <div class="price-txt">已售225件</div>
-                        </div>
-                        <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">¥ 22.00</span><span class="or-price">¥ 32.00</span> </div>
+                        <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">{{item.platformPrice}}</span><span class="or-price">{{item.marketPrice}}</span> </div>
                     </div>
                 </div>
             </div>
@@ -100,56 +62,18 @@
     </div>
     <div class="weui_tab_bd tnTabContent">
         <div class="pro-list">
-            <div class="prolist1">
-                <div class="prolist-img"><a href="detail.html"><img src="../images/img18.jpg" alt=""/></a></div>
+            <div class="prolist1" v-for="(index, item) in waProductListTab2">
+                <!--<div class="prolist-img"><a href=""><img src="" alt=""/></a></div>-->
+                <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
                 <div class="prolist-right"> <a href="detail.html">
-                    <div class="prolist-title">靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg</div>
+                    <div class="prolist-title">{{item.goodsdDescription}}</div>
                 </a>
                     <div class="listprice">
                         <div class="price-box">
                             <div class="Mobiletxt"><span class="icon-ico14 Mobileico"></span>专享价</div>
-                            <div class="price-txt">已售225件</div>
+                            <div class="price-txt">{{item.sold}}</div>
                         </div>
-                        <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">¥ 22.00</span><span class="or-price">¥ 32.00</span> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="prolist1">
-                <div class="prolist-img"><a href="detail.html"><img src="../images/img18.jpg" alt=""/></a></div>
-                <div class="prolist-right"> <a href="detail.html">
-                    <div class="prolist-title">靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg</div>
-                </a>
-                    <div class="listprice">
-                        <div class="price-box">
-                            <div class="price-txt">已售225件</div>
-                        </div>
-                        <div class="shop-num"><a href="detail.html" class="cartbutton">加入购物车</a> <span class="e-price">¥ 22.00</span><span class="or-price">¥ 32.00</span> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="prolist1">
-                <div class="prolist-img"><a href="detail.html"><img src="../images/img18.jpg" alt=""/></a></div>
-                <div class="prolist-right"> <a href="detail.html">
-                    <div class="prolist-title">靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg</div>
-                </a>
-                    <div class="listprice">
-                        <div class="price-box">
-                            <div class="price-txt">已售225件</div>
-                        </div>
-                        <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">¥ 22.00</span><span class="or-price">¥ 32.00</span> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="prolist1">
-                <div class="prolist-img"><a href="detail.html"><img src="../images/img18.jpg" alt=""/></a></div>
-                <div class="prolist-right"> <a href="detail.html">
-                    <div class="prolist-title">靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg</div>
-                </a>
-                    <div class="listprice">
-                        <div class="price-box">
-                            <div class="price-txt">已售225件</div>
-                        </div>
-                        <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">¥ 22.00</span><span class="or-price">¥ 32.00</span> </div>
+                        <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">{{item.platformPrice}}</span><span class="or-price">{{item.marketPrice}}</span> </div>
                     </div>
                 </div>
             </div>
@@ -166,6 +90,7 @@
 <script src="../lib/jquery-ui/js/jquery-weui.js"></script>
 <script src="../js/tnTab.js"></script>
 <script src="../js/wa_Component.js"></script>
+<script src="../js/global.js"></script>
 <script>
     $(function() {
         FastClick.attach(document.body);
@@ -174,28 +99,31 @@
         el: '#wa-tab',
         data:{
             imgurl:[],
-            goPage:"detail.html",
+            waProductListTab0:[],
+            waProductListTab1:[],
+            waProductListTab2:[],
             tabTitle:[
                 {text:"按销量排序"},
                 {text:"价格从高到低"},
                 {text:"价格从低到高"}
-            ],
-            waProductList:[
-                {"imgurl":"../images/img18.jpg",
-                "goodsdDescription":"靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg",
-                "platformPrice":"¥ 22.00",
-                "marketPrice":"¥ 32.00",
-                 "sold":"已售205件",
-                "goPage":"detail.html"
-                },
-                {"imgurl":"../images/img18.jpg",
-                    "goodsdDescription":"靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg",
-                    "platformPrice":"¥ 22.00",
-                    "marketPrice":"¥ 32.00",
-                    "sold":"已售255件",
-                    "goPage":"detail.html"
-                }
             ]
+        },
+        created: function () {
+            var self=this;
+            $.ajax({
+                type: 'GET',
+                url: wa.path.root() + 'data/productList.json',//底部导航的数据文件地址
+                dataType: 'json',
+                success: function (requestdata) {
+                    console.log(requestdata.length)
+                    self.waProductListTab0= requestdata.waProductList1;
+                    self.waProductListTab1= requestdata.waProductList2;
+                    self.waProductListTab2= requestdata.waProductList3;
+                },
+                error: function (xhr, type) {
+                    alert('Ajax error fff!')
+                }
+            })
         }
     })
 </script>

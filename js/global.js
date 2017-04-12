@@ -7,6 +7,9 @@ wa.path = {
     if (window.location.host.indexOf('192.168.5.41') > -1) {
       ret = '/waui/';
     }
+    if (window.location.host.indexOf('localhost:63342') > -1) {
+      ret = '/new_waui/';
+    }
     return ret;    
   }
 }

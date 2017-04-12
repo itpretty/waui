@@ -121,7 +121,7 @@ new Vue({
     data: {
         footerData: [],//底部导航的数据
         tId:0,
-        imgurl:"../images/dmc-banner.jpg",
+        imgurl: wa.path.root() + "images/dmc-banner.jpg",
         goPage:"page.html"
     },
     methods:{
@@ -136,7 +136,7 @@ new Vue({
         var self=this;
         $.ajax({
             type: 'GET',
-            url: '../data/footerNavData.json',//底部导航的数据文件地址
+            url: wa.path.root() + 'data/footerNavData.json',//底部导航的数据文件地址
             dataType: 'json',
             success: function (requestdata) {
                 console.log(requestdata.todoList)

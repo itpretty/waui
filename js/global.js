@@ -1,8 +1,12 @@
-/**
- * Created by Administrator on 2017/4/12.
- */
-var wa={}
-wa.tnTab={
-    //"tabTitle":["按销量排序","价格从高到低","价格从低到高"]
-}
+var wa = {};
 
+// Path
+wa.path = {
+  root: function(){
+    var ret = '/';    
+    if (window.location.host.indexOf('192.168.5.41') > -1) {
+      ret = '/waui/';
+    }
+    return ret;    
+  }
+}

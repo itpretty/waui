@@ -1,0 +1,7 @@
+.tnTab{width: 100%; background: #fff; overflow: hidden;}
+.tnTab li{width: 33.33%; height: 49px; line-height: 48px; float: left; }
+.tnTab li:last-child{border-right: none;}
+/*.tnTab li a{font-size: 1.6rem; color: #595c64; text-align: center; display: block;}*/
+.tnTab li.now a{color: #ff6b13; border-bottom: 1px solid #ff6b13}
+.tnTabContent{display:none; width:100%;}
+.tnTabContent.current{display:block}

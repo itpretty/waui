@@ -95,7 +95,7 @@ Vue.component('wa-search-default', {
 
 /*底部导航的组件*/
 Vue.component('wa-footer-nav', {
-    template: '<div class="weui_tabbar bottom-menu" id="todo-list-item"><ul><li v-for="(todo,index) in navList"><a href="javascript:;" :class="{now: index==0}" @click="goPage(index)"><span class="titleico" :class="todo.class"></span><p>{{todo.navName}}</p></a></li></ul></div>',
+    template: '<div class="weui_tabbar bottom-menu" id="todo-list-item"><ul><li v-for="(index,todo) in navList"><a href="javascript:;" :class="{now: index==0}" @click="goPage(index)"><span class="titleico" :class="todo.class"></span><p>{{todo.navName}}</p></a></li></ul></div>',
     props: ["navList"],
     methods: {
         goPage:function (index) {

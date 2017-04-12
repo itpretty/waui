@@ -91,5 +91,27 @@ input:focus{outline: none; }
 .dmc-btn a{ display:block; border-radius:4px; font-size: 0.86rem;height: 2.2rem;line-height: 2.2rem; text-align:center; color:#FFF;}
 .dmc-btn a.dmc-btn-dark{ background:#a5a4a4;}
 .dmc-btn a.dmc-btn-positive{ background:#ff6b13;}
-/*海报下面的图片*/
-/*#poster_img{max-width: 100%!important; border: 2px solid red}*/
+/*商品列表*/
+.result-sort:before{ border-bottom:none; height:50px; overflow:hidden;}
+.result-sort{ background:#FFF; font-size:0.7rem; overflow:hidden;}
+.result-sort ul{ width:100%;}
+.result-sort ul li{ border-bottom:1px solid #e0e0e0; position:relative; float:left; width:33.333%; text-align:center;height: 49px; line-height:48px;}
+.result-sort ul li a{ display:block; height:48px; line-height:48px;}
+.result-sort ul li .bar{ position:absolute; left:0; top:0; background: #e0e0e0; height: 24px;left: 0;position: absolute;top:13px; width: 1px;}
+.result-sort ul li.now{ border-bottom:1px solid #ff6b13;}
+.result-sort ul li.now a{ color:#ff6b13;  border-bottom:1px solid #ff6b13;}
+.pro-list{ background:#FFF; padding:0 10px;}
+.prolist1 { position:relative; border-bottom:1px solid #e0e0e0;display: flex;flex-direction: row;flex-wrap: wrap;box-sizing: border-box; padding:10px 0; overflow:hidden;}
+.prolist1 .prolist-img { float:left; width:30%;}
+.prolist1 .prolist-right { min-height:5rem; float:left; width:65%;padding:0 0 0 5%;}
+.prolist1 .prolist-right .prolist-title{font-size:0.7rem; height:2rem; line-height: 1rem;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
+.prolist1 .prolist-right .listprice{ padding:6px 0 0 0; overflow:hidden;}
+.prolist1 .prolist-right .price-box{ padding:0 0 2px 0;font-size:0.7rem; overflow:hidden;}
+.prolist1 .prolist-right .Mobiletxt{  float:left; padding:0 4px 0 0; color:#ff6b13; height:0.9rem; border:1px solid #ff9c62;}
+.prolist1 .prolist-right .Mobiletxt span.Mobileico{ height:0.9rem; line-height:0.9rem; display:block;  float:left; background:#ff6b13; color:#FFF; font-size:0.7rem; margin:0 4px 0 0;}
+.prolist1 .prolist-right .price-txt{ float:right; color:#636363; }
+.prolist1 .prolist-right .shop-num{ padding:4px 0 0 0; line-height:1rem; overflow:hidden;}
+.prolist1 .prolist-right .shop-num .e-price{ display:block; font-size:0.98rem; color:#ff6b13;}
+.prolist1 .prolist-right .shop-num .or-price{ font-size:0.7rem; color:#a2a1a1;text-decoration: line-through; }
+.prolist1 .prolist-right .shop-num a.cartbutton{ float:right;border-radius:4px; border:1px solid #ffaf7f; color:#ff6b13; line-height:1.6rem; padding:0 10px;font-size:0.8rem;}
+.prolist1 .prolist-right .shop-num a.cartbutton:hover,.prolist1 .prolist-right .shop-num a.cartbutton:active{border:1px solid #dc5e12; background:#dc5e12; color:#FFF;}

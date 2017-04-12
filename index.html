@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>开机广告页</title>
+    <title>WAUI Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A Vue UI Simply for Web App">
+    <link rel="stylesheet" href="lib/weui/css/weui.css">
+    <link rel="stylesheet" href="lib/jquery-ui/css/jquery-weui.css">
+    <link rel="stylesheet" href="css/mobile.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .poster{text-align:center;padding:3.5rem 0 1rem;}
+    </style>
 </head>
 <body>
-<p>hello world</p>
+<div id="wa-home">
+    <wa-img :src="logoSrc" :href="logoHref"></wa-img>
+    <div class="weui-cells">
+      <a v-for="page in pages" @click="go($key)" class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__bd">
+          <p v-cloak>{{ page.title}}</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+    </div>
+</div>
+
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="lib/jquery-ui/js/jquery-weui.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/vue-validator.min.js"></script>
+<script src="js/global.js"></script>
+<script src="js/wa_Component.js"></script>
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    var waHome=new Vue({
+        el: '#wa-home',
+        data:{
+            logoSrc:'doc/logo-waui.png',
+            logoHref:'https://github.com/itpretty/waui',
+            pages:{
+              login: {
+                title: '登录'
+              },
+              register: {
+                title: '注册'
+              },
+              registerContent: {
+                title: '注册详情'
+              },
+              searchBar: {
+                title: '搜索'
+              }
+            }
+        },
+        methods: {
+          go: function(key){
+            location.href = 'page/wa_' + key + '.html';
+          }
+        }
+    });
+</script>
 </body>
 </html>

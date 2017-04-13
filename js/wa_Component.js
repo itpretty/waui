@@ -143,7 +143,7 @@ new Vue({
                 self.footerData= requestdata.todoList;
             },
             error: function (xhr, type) {
-                alert('Ajax error fff!')
+                $.alert(this.url+'<br/>'+'Ajax error!')
             }
         })
     }

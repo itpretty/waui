@@ -1,5 +1,5 @@
 {
-  "waProductList1":[
+  "waProductListFirst":[
     {"imgurl":"../images/img18.jpg",
       "goodsdDescription":"靖江1猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg",
       "platformPrice":"¥ 22.00",
@@ -15,7 +15,7 @@
       "goPage":"detail.html"
     }
   ],
-  "waProductList2":[
+  "waProductListSecond":[
     {"imgurl":"../images/img18.jpg",
       "goodsdDescription":"靖江2猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg",
       "platformPrice":"¥ 22.00",
@@ -45,7 +45,7 @@
       "goPage":"detail.html"
     }
   ],
-  "waProductList3":[
+  "waProductListThree":[
     {"imgurl":"../images/img22.jpg",
       "goodsdDescription":"靖江3猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg靖江猪肉脯200g麻辣风味特别优惠满500kg",
       "platformPrice":"¥ 22.00",

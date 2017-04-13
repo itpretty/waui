@@ -22,8 +22,7 @@
     </div>
     <div class="weui_tab_bd tnTabContent current">
         <div class="pro-list">
-            <div class="prolist1" v-for="(index, item) in waProductListTab0">
-                <!--<div class="prolist-img"><a href=""><img src="" alt=""/></a></div>-->
+            <div class="prolist1" v-for="(index, item) in waProductListTabOne">
                 <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
                 <div class="prolist-right"> <a href="detail.html">
                     <div class="prolist-title">{{item.goodsdDescription}}</div>
@@ -42,8 +41,7 @@
     </div>
     <div class="weui_tab_bd tnTabContent">
         <div class="pro-list">
-            <div class="prolist1" v-for="(index, item) in waProductListTab1">
-                <!--<div class="prolist-img"><a href=""><img src="" alt=""/></a></div>-->
+            <div class="prolist1" v-for="(index, item) in waProductListTabTwo">
                 <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
                 <div class="prolist-right"> <a href="detail.html">
                     <div class="prolist-title">{{item.goodsdDescription}}</div>
@@ -62,8 +60,7 @@
     </div>
     <div class="weui_tab_bd tnTabContent">
         <div class="pro-list">
-            <div class="prolist1" v-for="(index, item) in waProductListTab2">
-                <!--<div class="prolist-img"><a href=""><img src="" alt=""/></a></div>-->
+            <div class="prolist1" v-for="(index, item) in waProductListTabThree">
                 <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
                 <div class="prolist-right"> <a href="detail.html">
                     <div class="prolist-title">{{item.goodsdDescription}}</div>
@@ -89,8 +86,8 @@
 <script src="../js/vue-validator.min.js"></script>
 <script src="../lib/jquery-ui/js/jquery-weui.js"></script>
 <script src="../js/tnTab.js"></script>
-<script src="../js/wa_Component.js"></script>
 <script src="../js/global.js"></script>
+<script src="../js/wa_Component.js"></script>
 <script>
     $(function() {
         FastClick.attach(document.body);
@@ -99,9 +96,9 @@
         el: '#wa-tab',
         data:{
             imgurl:[],
-            waProductListTab0:[],
-            waProductListTab1:[],
-            waProductListTab2:[],
+            waProductListTabOne:[],
+            waProductListTabTwo:[],
+            waProductListTabThree:[],
             tabTitle:[
                 {text:"按销量排序"},
                 {text:"价格从高到低"},
@@ -115,13 +112,13 @@
                 url: wa.path.root() + 'data/productList.json',//底部导航的数据文件地址
                 dataType: 'json',
                 success: function (requestdata) {
-                    console.log(requestdata.length)
-                    self.waProductListTab0= requestdata.waProductList1;
-                    self.waProductListTab1= requestdata.waProductList2;
-                    self.waProductListTab2= requestdata.waProductList3;
+                    console.log(this.url)
+                    self.waProductListTabOne= requestdata.waProductListFirst;
+                    self.waProductListTabTwo= requestdata.waProductListSecond;
+                    self.waProductListTabThree= requestdata.waProductListThree;
                 },
                 error: function (xhr, type) {
-                    alert('Ajax error fff!')
+                    $.alert(this.url+'<br/>'+'Ajax error!')
                 }
             })
         }

@@ -58,14 +58,11 @@
 </div>
 <script src="../js/jquery-2.1.4.js"></script>
 <script src="../js/fastclick.js"></script>
-<script src="../js/zepto.js"></script>
-<script src="../js/wa_Component.js"></script>
 <script src="../js/vue.js"></script>
 <script src="../js/vue-validator.min.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/wa_Component.js"></script>
 <script>
-    $(function() {
-        FastClick.attach(document.body);
-    });
     var waLogin=new Vue({
         el: '#wa-register-content',
         data:{
@@ -90,7 +87,7 @@
                 return /^[\da-zA-z]{6,12}$/.test(val);
             },
             match:function (val,result) {
-                console.log(val+"/"+result)
+                //console.log(val+"/"+result)
                 return result;
             },
             recomphone:function (val) {

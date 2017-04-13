@@ -14,11 +14,7 @@
 </head>
 <body>
 <div id="wa_img">
-    <p>fhnsdjfnldsfnldsf</p>
     <div><wa-img :src="imgurl" :href="goPage"></wa-img></div>
-    <p>fhnsdjfnldsfnldsf</p>
-    <p>fhnsdjfnldsfnldsf</p>
-    <p>fhnsdjfnldsfnldsf</p>
 </div>
 <script src="../js/jquery-2.1.4.js"></script>
 <script src="../js/fastclick.js"></script>
@@ -29,10 +25,11 @@
     $(function() {
         FastClick.attach(document.body);
     });
-    var waLogin=new Vue({
+    var waImg=new Vue({
         el: '#wa_img',
         data:{
-            imgurl:"../images/dmc-banner.jpg"
+            imgurl:"../images/dmc-banner.jpg",
+            goPage:'index.html'
         }
     });
 </script>

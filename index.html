@@ -11,19 +11,22 @@
     <link rel="stylesheet" href="css/mobile.css"/>
     <link rel="stylesheet" href="css/style.css">
     <style>
-      .poster{text-align:center;padding:3.5rem 0 1rem;}
+        .poster {
+            text-align: center;
+            padding: 3.5rem 0 1rem;
+        }
     </style>
 </head>
 <body>
 <div id="wa-home">
     <wa-img :src="logoSrc" :href="logoHref"></wa-img>
     <div class="weui-cells">
-      <a v-for="page in pages" @click="go($key)" class="weui-cell weui-cell_access" href="javascript:;">
-        <div class="weui-cell__bd">
-          <p v-cloak>{{ page.title}}</p>
-        </div>
-        <div class="weui-cell__ft"></div>
-      </a>
+        <a v-for="page in pages" @click="go($key)" class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+                <p v-cloak>{{ page.title}}</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
     </div>
 </div>
 
@@ -35,36 +38,42 @@
 <script src="js/global.js"></script>
 <script src="js/wa_Component.js"></script>
 <script>
-    $(function() {
+    $(function () {
         FastClick.attach(document.body);
     });
-    var waHome=new Vue({
+    var waHome = new Vue({
         el: '#wa-home',
-        data:{
-            logoSrc:'doc/logo-waui.png',
-            logoHref:'https://github.com/itpretty/waui',
-            pages:{
-              login: {
-                title: '登录'
-              },
-              register: {
-                title: '注册'
-              },
-              registerContent: {
-                title: '注册详情'
-              },
-              searchBar: {
-                title: '搜索'
-              },
-              tnTab: {
-                title: '切换'
-              }
+        data: {
+            logoSrc: 'doc/logo-waui.png',
+            logoHref: 'https://github.com/itpretty/waui',
+            pages: {
+                login: {
+                    title: '登录'
+                },
+                register: {
+                    title: '注册'
+                },
+                registerContent: {
+                    title: '注册详情'
+                },
+                searchBar: {
+                    title: '搜索'
+                },
+                tnTab: {
+                    title: '切换'
+                },
+                person_center_head: {
+                    title: '个人中心头部'
+                },
+                person_center_nav: {
+                    title: '个人中心导航'
+                }
             }
         },
         methods: {
-          go: function(key){
-            location.href = 'page/wa_' + key + '.html';
-          }
+            go: function (key) {
+                location.href = 'page/wa_' + key + '.html';
+            }
         }
     });
 </script>

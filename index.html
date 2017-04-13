@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WAUI Home</title>
+    <title>WaUI Home</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="A Vue UI Simply for Web App">
@@ -11,22 +11,28 @@
     <link rel="stylesheet" href="css/mobile.css"/>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .poster {
-            text-align: center;
-            padding: 3.5rem 0 1rem;
-        }
+      .poster{text-align:center;padding:3.5rem 0 1rem;}
+      .weui-footer{margin-top:1rem;}
     </style>
 </head>
 <body>
 <div id="wa-home">
     <wa-img :src="logoSrc" :href="logoHref"></wa-img>
     <div class="weui-cells">
-        <a v-for="page in pages" @click="go($key)" class="weui-cell weui-cell_access" href="javascript:;">
-            <div class="weui-cell__bd">
-                <p v-cloak>{{ page.title}}</p>
-            </div>
-            <div class="weui-cell__ft"></div>
-        </a>
+      <a v-for="page in pages" @click="go($key)" class="weui-cell weui-cell_access" href="javascript:;">
+        <div class="weui-cell__bd">
+          <p v-cloak>{{ page.title}}</p>
+        </div>
+        <div class="weui-cell__ft" v-cloak>{{ page.titleEn }}</div>
+      </a>
+    </div>
+    
+    <div class="weui-footer">
+      <p class="weui-footer__links">
+        <a href="http://www.ffzxnet.com" class="weui-footer__link">非凡之星</a>
+        <a href="https://github.com/itpretty/waui" class="weui-footer__link">GitHub WaUI</a>
+      </p>
+      <p class="weui-footer__text">Copyright © <span>{{ copyRightYear }}</span> WaUI</p>
     </div>
 </div>
 
@@ -38,42 +44,43 @@
 <script src="js/global.js"></script>
 <script src="js/wa_Component.js"></script>
 <script>
-    $(function () {
-        FastClick.attach(document.body);
-    });
-    var waHome = new Vue({
+    var waHome=new Vue({
         el: '#wa-home',
-        data: {
-            logoSrc: 'doc/logo-waui.png',
-            logoHref: 'https://github.com/itpretty/waui',
-            pages: {
-                login: {
-                    title: '登录'
-                },
-                register: {
-                    title: '注册'
-                },
-                registerContent: {
-                    title: '注册详情'
-                },
-                searchBar: {
-                    title: '搜索'
-                },
-                tnTab: {
-                    title: '切换'
-                },
-                person_center_head: {
-                    title: '个人中心头部'
-                },
-                person_center_nav: {
-                    title: '个人中心导航'
-                }
+        data:{
+            logoSrc:'doc/logo-waui.png',
+            logoHref:'https://github.com/itpretty/waui',
+            copyRightYear: (new Date).getFullYear(),
+            pages:{
+              login: {
+                title: '登录',
+                titleEn: 'Login'
+              },
+              register: {
+                title: '注册',
+                titleEn: 'Register'
+              },
+              registerContent: {
+                title: '注册详情',
+                titleEn: 'Registration Detail'
+              },
+              searchBar: {
+                title: '搜索',
+                titleEn: 'Search'
+              },
+              tnTab: {
+                title: '切换',
+                titleEn: 'Tab'
+              },
+              img: {
+                title: '图片',
+                titleEn: 'Image'
+              }
             }
         },
         methods: {
-            go: function (key) {
-                location.href = 'page/wa_' + key + '.html';
-            }
+          go: function(key){
+            location.href = 'page/wa_' + key + '.html';
+          }
         }
     });
 </script>

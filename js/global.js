@@ -13,3 +13,7 @@ wa.path = {
     return ret;    
   }
 }
+
+$(function() {
+    FastClick.attach(document.body);
+});

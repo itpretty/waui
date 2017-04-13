@@ -17,6 +17,7 @@
 <div class="weui_tab" id="wa-tab">
     <div class="weui_navbar result-sort">
         <ul class="tnTab">
+
             <li v-for="(index,item) in tabTitle" :class="{now: index==0}"><a href="#">{{item.text}}</a><i class="bar"
                                                                                                           v-if="index!=0"></i>
             </li>
@@ -26,6 +27,7 @@
         <div class="pro-list">
             <div class="prolist1" v-for="(index, item) in waProductListTabOne">
                 <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
+
                 <div class="prolist-right"><a href="detail.html">
                     <div class="prolist-title">{{item.goodsdDescription}}</div>
                 </a>
@@ -34,18 +36,23 @@
                             <div class="Mobiletxt"><span class="icon-ico14 Mobileico"></span>专享价</div>
                             <div class="price-txt">{{item.sold}}</div>
                         </div>
+
                         <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">{{item.platformPrice}}</span><span
                                 class="or-price">{{item.marketPrice}}</span></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="No_more">没有更多啦~</div>
+
+        <div class="weui-footer">
+          <p class="weui-footer__text No_more">没有更多啦~</p>
+        </div>
     </div>
     <div class="weui_tab_bd tnTabContent">
         <div class="pro-list">
             <div class="prolist1" v-for="(index, item) in waProductListTabTwo">
                 <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
+
                 <div class="prolist-right"><a href="detail.html">
                     <div class="prolist-title">{{item.goodsdDescription}}</div>
                 </a>
@@ -54,18 +61,23 @@
                             <div class="Mobiletxt"><span class="icon-ico14 Mobileico"></span>专享价</div>
                             <div class="price-txt">{{item.sold}}</div>
                         </div>
+
                         <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">{{item.platformPrice}}</span><span
                                 class="or-price">{{item.marketPrice}}</span></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="No_more">没有更多啦~</div>
+
+        <div class="weui-footer">
+          <p class="weui-footer__text No_more">没有更多啦~</p>
+        </div>
     </div>
     <div class="weui_tab_bd tnTabContent">
         <div class="pro-list">
             <div class="prolist1" v-for="(index, item) in waProductListTabThree">
                 <div class="prolist-img"><img :src=item.imgurl :href=item.goPage></div>
+
                 <div class="prolist-right"><a href="detail.html">
                     <div class="prolist-title">{{item.goodsdDescription}}</div>
                 </a>
@@ -74,13 +86,17 @@
                             <div class="Mobiletxt"><span class="icon-ico14 Mobileico"></span>专享价</div>
                             <div class="price-txt">{{item.sold}}</div>
                         </div>
+
                         <div class="shop-num"><a href="#" class="cartbutton">加入购物车</a> <span class="e-price">{{item.platformPrice}}</span><span
                                 class="or-price">{{item.marketPrice}}</span></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="No_more">没有更多啦~</div>
+
+        <div class="weui-footer">
+          <p class="weui-footer__text No_more">没有更多啦~</p>
+        </div>
     </div>
     <!--内容区-->
 </div>
@@ -99,6 +115,15 @@
     });
     var waTab = new Vue({
         el: '#wa-tab',
+
+
+
+
+
+
+
+
+
         data: {
             imgurl: [],
             waProductListTabOne: [],
@@ -111,18 +136,22 @@
             ]
         },
         created: function () {
+
             var self = this;
             $.ajax({
                 type: 'GET',
                 url: wa.path.root() + 'data/productList.json',//底部导航的数据文件地址
                 dataType: 'json',
                 success: function (requestdata) {
-                    console.log(this.url)
+                    console.log(this.url)                    self.waProductListTabOne= requestdata.waProductListFirst;
+
+
                     self.waProductListTabOne = requestdata.waProductListFirst;
                     self.waProductListTabTwo = requestdata.waProductListSecond;
                     self.waProductListTabThree = requestdata.waProductListThree;
                 },
                 error: function (xhr, type) {
+
                     $.alert(this.url + '<br/>' + 'Ajax error!')
                 }
             })

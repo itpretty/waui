@@ -2,156 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>滚动加载</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../lib/weui/css/weui.css">
+    <link rel="stylesheet" href="../lib/jquery-ui/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css"/>
 </head>
 <body>
-<div id="app">
-    <logo-picture></logo-picture>
-    <search-panel></search-panel>
+<div >
+    <div id="app"　handler="fetchData" should-handle="!loading">
+        <p v-for="item in datas">{{item.name}}</p>
+    </div>
+    <div class="weui-footer">
+        <p class="weui-footer__text No_more">没有更多啦~</p>
+    </div>
 </div>
-<script src="../js/vue.js"></script>
+<script src="../js/jquery-2.1.4.js"></script>
+<script src="../js/fastclick.js"></script>
+<script src="../js/vue2.0.3.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/wa_Component.js"></script>
+<script src="../lib/jquery-ui/js/jquery-weui.js"></script>
+<!--<script src="../js/vue-mugen-scroll.min.js"></script>-->
+
 <script>
-    Vue.component('logo-picture',{
-        template :' \
-    <div class="main-logo">\
-        <img :src="items[now].src" @click="toggleFlag"/>\
-        <span @click="toggleFlag" class="logoList-arrow"> </span>\
-        <transition-group tag="ul" v-show="flagShow" class="logoList">\
-            <li v-for="(item,index) in items" :key="index" @click="changeFlag(index)" @mouseover="flagHover(index)" :class="{selectback: index == hoverindex}">\
-                <img :src="item.src" />\
-            </li>\
-        </transition>\
-    </div>',
-        data: function() {
-            return {
-                items: [{src:'../src/assets/360_logo.png'},{src:'../src/assets/baidu_logo.png'},{src:'../src/assets/sougou_logo.png'}],
-                now: 0,
-                flagShow: false,
-                hoverindex: -1
-            }
+    var count = 0;
+
+    new Vue({
+        el: '#app',
+        data: {
+            datas: [],
+            busy: false
         },
         methods: {
-            //显示隐藏图片列表
-            toggleFlag: function() {
-                this.flagShow = !this.flagShow;
-            },
-            //改变搜索引擎
-            changeFlag: function(index) {
-                this.now = index;
-                this.flagShow = false;
-                bus.$emit("change",index);
-            },
-            //li hover
-            flagHover: function(index) {
-                this.hoverindex = index;
+            fetchData: function() {
+                this.loading=true;
+                    for (var i = 0, j = 10; i < j; i++) {
+                        self.datas.push({ name: count++ });
+                }
+                this.loading=false;
             }
         }
     });
-    Vue.component('search-panel',{
-        template:'\
-    <div class="search-input">\
-        <input v-model="search" @keyup="get($event)" @keydown.enter="searchInput()" @keydown.down="selectDown()" @keydown.up.prevent="selectUp()"/>\
-        <span @click="clearInput()" class="search-reset">&times;</span>\
-        <button @click="searchInput()" class="search-btn">搜一下</button>\
-        <div class="search-select">\
-            <transition-group tag="ul" mode="out-in">\
-                <li v-for="(value,index) in myData" :class="{selectback:index==now}" :key="index" @click="searchThis" @mouseover="selectHover(index)" class="search-select-option search-select-list">\
-                    {{value}}\
-                </li>\
-            </transition-group>\
-        </div>\
-    </div>',
-        data: function() {
-            return {
-                search: '',
-                myData: [],
-                flag: 0,
-                now: -1,
-                logoData: [
-                    {
-                        'name': "360搜索",
-                        searchSrc: "https://www.so.com/s?ie=utf-8&shb=1&src=360sou_newhome&q="
-                    },
-                    {
-                        'name': "百度搜索",
-                        searchSrc: "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd="
-                    },
-                    {
-                        'name': "搜狗搜索",
-                        searchSrc: "https://www.sogou.com/web?query="
-                    }
-                ]
-            }
-        },
-        methods: {
-            get: function(event) {
-                if(event.keyCode == 38 || event.keyCode == 40){  //向上向下
-                    return ;
-                }
-                this.$http.jsonp('https://sug.so.360.cn/suggest?word=' + this.search + '&encodein=utf-8&encodeout=utf-8').then(function(res) {
-                    this.myData = res.data.s;
-
-                }, function() {
-
-                });
-            },
-            //清除内容
-            clearInput: function() {
-                this.search = '';
-                this.get();
-            },
-            //搜索
-            searchInput: function() {
-                alert(this.flag)
-                window.open(this.logoData[this.flag].searchSrc+this.search);
-            },
-            //搜索的内容
-            searchThis: function(index) {
-                this.search = this.myData[index];
-                this.searchInput();
-            },
-            //li hover
-            selectHover: function(index) {
-                this.search = this.myData[index];
-                this.now = index;
-            },
-            //向下
-            selectDown: function() {
-                this.now++;
-                if(this.now == this.myData.length) {
-                    this.now = 0;
-                }
-                this.search = this.myData[this.now];
-            },
-            //向上
-            selectUp: function() {
-                this.now--;
-                if(this.now == -1) {
-                    this.now = this.myData.length - 1;
-                }
-                this.search = this.myData[this.now];
-            }
-        },
-        created: function() {    //通信
-            var self = this;
-            bus.$on('change',function(index) {
-                self.flag = index;
-            })
-        }
-    });
-    var bus = new Vue();
-
-    //logo-picture里触发事件，并传递参数
-    bus.$emit("change",index);
-
-    //search-panel里监听事件是否发生
-    var self = this;
-    bus.$on('change',function(index) {
-        self.flag = index;
-    })
-new Vue({
-    el:"#app"
-})
 </script>
 </body>
 </html>

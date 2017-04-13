@@ -17,9 +17,8 @@
 <div class="weui_tab" id="wa-tab">
     <div class="weui_navbar result-sort">
         <ul class="tnTab">
-
-            <li v-for="(index,item) in tabTitle" :class="{now: index==0}"><a href="#">{{item.text}}</a><i class="bar"
-                                                                                                          v-if="index!=0"></i>
+            <li v-for="(index,item) in tabTitle" :class="{now: index==0}">
+                <a href="#">{{item.text}}</a><i class="bar" v-if="index!=0"></i>
             </li>
         </ul>
     </div>
@@ -45,7 +44,7 @@
         </div>
 
         <div class="weui-footer">
-          <p class="weui-footer__text No_more">没有更多啦~</p>
+            <p class="weui-footer__text No_more">没有更多啦~</p>
         </div>
     </div>
     <div class="weui_tab_bd tnTabContent">
@@ -70,7 +69,7 @@
         </div>
 
         <div class="weui-footer">
-          <p class="weui-footer__text No_more">没有更多啦~</p>
+            <p class="weui-footer__text No_more">没有更多啦~</p>
         </div>
     </div>
     <div class="weui_tab_bd tnTabContent">
@@ -95,7 +94,7 @@
         </div>
 
         <div class="weui-footer">
-          <p class="weui-footer__text No_more">没有更多啦~</p>
+            <p class="weui-footer__text No_more">没有更多啦~</p>
         </div>
     </div>
     <!--内容区-->
@@ -112,7 +111,7 @@
 <script>
     var waTab = new Vue({
         el: '#wa-tab',
-     data: {
+        data: {
             imgurl: [],
             waProductListTabOne: [],
             waProductListTabTwo: [],
@@ -132,7 +131,7 @@
                 dataType: 'json',
                 success: function (requestdata) {
                     console.log(this.url);
-                    self.waProductListTabOne = requestdata.waProductListFirst;
+                    self.waProductListTabOne =self.waProductListTabOne.concat( requestdata.waProductListFirst);
                     self.waProductListTabTwo = requestdata.waProductListSecond;
                     self.waProductListTabThree = requestdata.waProductListThree;
                 },

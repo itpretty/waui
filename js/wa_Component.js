@@ -63,7 +63,7 @@ Vue.component('wa-search-default', {
             search: "",
         }
     },
-    props: ["text","goPage","callBack"],
+    props: ["text", "goPage", "callBack"],
     methods: {
         //清除内容
         clearInput: function () {
@@ -73,13 +73,13 @@ Vue.component('wa-search-default', {
         //搜索
         searchInput: function () {
             //alert( this.goPage == "null")
-            if (this.goPage!="null") {//如果搜索是跳转页面的话
-                if(!window.localStorage){
+            if (this.goPage != "null") {//如果搜索是跳转页面的话
+                if (!window.localStorage) {
                     console.log("浏览器不支持localstorage");
                     return false;
-                }else{
-                    var storage=window.localStorage;
-                    storage["searchContent"]=this.search;//保存搜索字段，在下个页面获取
+                } else {
+                    var storage = window.localStorage;
+                    storage["searchContent"] = this.search;//保存搜索字段，在下个页面获取
                     console.log(storage["searchContent"]);
 
                 }
@@ -98,13 +98,13 @@ Vue.component('wa-footer-nav', {
     template: '<div class="weui_tabbar bottom-menu" id="todo-list-item"><ul><li v-for="(index,todo) in navList"><a href="javascript:;" :class="{now: index==0}" @click="goPage(index)"><span class="titleico" :class="todo.class"></span><p>{{todo.navName}}</p></a></li></ul></div>',
     props: ["navList"],
     methods: {
-        goPage:function (index) {
+        goPage: function (index) {
             console.log(this.navList[index].href)
-            if(this.navList[index].href!="null"){//如果有跳转地址
+            if (this.navList[index].href != "null") {//如果有跳转地址
                 window.open(this.navList[index].href);
-            }else{//如果不跳转执行原生方法
+            } else {//如果不跳转执行原生方法
                 console.log("Execution native method")
-               // add(index);
+                // add(index);
             }
         }
     }
@@ -113,40 +113,25 @@ Vue.component('wa-footer-nav', {
 /*海报*/
 Vue.component('wa-img', {
     template: '<div class="poster"><a :href="href"><img :src="src" alt=""/></a></div>',
-    props: ["src","href"]
+    props: ["src", "href"]
 })
-/*创建根实例*/
-new Vue({
-    el: '#waui',
-    data: {
-        footerData: [],//底部导航的数据
-        tId:0,
-        imgurl: wa.path.root() + "images/dmc-banner.jpg",
-        goPage:"page.html"
-    },
-    methods:{
-        waNativeSearch:function () {//定义搜索按钮的原生方法
-            console.log("doSomething  content");
-        },
-        waFooterNavGo:function () {//底部导航不跳转的原生方法
-            console.log("do something ...");
-        }
-    },
-    created: function () {
-        var self=this;
-        $.ajax({
-            type: 'GET',
-            url: wa.path.root() + 'data/footerNavData.json',//底部导航的数据文件地址
-            dataType: 'json',
-            success: function (requestdata) {
-                console.log(requestdata.todoList)
-                self.footerData= requestdata.todoList;
-            },
-            error: function (xhr, type) {
-                $.alert(this.url+'<br/>'+'Ajax error!')
-            }
-        })
-    }
+
+/*个人中心头部*/
+Vue.component('wa-poster-head', {
+    template: '<div class="mms-head">\
+    <div :style="styleobject"></div>\
+    <!--<div class="mms-news"><a href="msg.html"><span class="newsico"><i></i></span>消息</a></div>-->\
+    <div class="mms-head-bottom">\
+    <dl>\
+    <dt><a href="#"><img :src="avatar" alt=""/></a></dt>\
+    <dd>\
+    <p>{{account}}</p>\
+    <a :href="href">{{accounttext}}<span class="icon-ico20"></span></a></dd>\
+    </dl>\
+    </div>\
+    </div>',
+    props: ["background", "height", "account", "href", "accounttext", "avatar", "styleobject"],
 })
+
 
 

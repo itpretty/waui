@@ -1,0 +1,39 @@
+{
+  "navList": [
+    {
+      "classIcon": "icon-ico36",
+      "bgColor": "#fd755e",
+      "href": "",
+      "rightTip": "icon-ico20",
+      "navName": "我的足迹"
+    },
+    {
+      "classIcon": "icon-ico37",
+      "bgColor": "#a770c7",
+      "href": "",
+      "rightTip": "icon-ico20",
+      "navName": "我的账户"
+    },
+    {
+      "classIcon": "icon-ico38",
+      "bgColor": "#fd7aac",
+      "href": "",
+      "rightTip": "icon-ico20",
+      "navName": "兑换优惠券"
+    },
+    {
+      "classIcon": "icon-ico39",
+      "bgColor": "#ffa913",
+      "href": "Coupon-list.html",
+      "rightTip": "icon-ico20",
+      "navName": "我的优惠券"
+    },
+    {
+      "classIcon": "icon-ico40",
+      "bgColor": "#a0db83",
+      "href": "",
+      "rightTip": "icon-ico20",
+      "navName": "帮助与反馈"
+    }
+  ]
+}

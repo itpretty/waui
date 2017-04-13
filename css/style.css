@@ -199,6 +199,6 @@
   content: "\e939";
 }
 
-[v-for],[v-bind]{visibility:hidden;}
+[v-cloak],[v-for],[v-bind]{visibility:hidden;}
 
 .No_more{margin:0.5rem 0;}

@@ -12,15 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
       .poster{text-align:center;padding:3.5rem 0 1rem;}
-      .weui-footer{margin-top:1rem;}      
-        .poster {
-            text-align: center;
-            padding: 3.5rem 0 1rem;
-        }
-
-        .weui-footer {
-            margin-top: 1rem;
-        }
+      .weui-footer{margin:1rem 0;}      
     </style>
 </head>
 <body>
@@ -40,7 +32,7 @@
             <a href="http://www.ffzxnet.com" class="weui-footer__link">非凡之星</a>
             <a href="https://github.com/itpretty/waui" class="weui-footer__link">GitHub WaUI</a>
         </p>
-        <p class="weui-footer__text">Copyright © <span>{{ copyRightYear }}</span> WaUI</p>
+        <p class="weui-footer__text">Copyright © <span v-cloak>{{ copyRightYear }}</span> WaUI</p>
     </div>
 </div>
 
@@ -89,11 +81,11 @@
                 },
                 person_center_head:{
                     title:'个人中心头部',
-                    titleEn:'Personal Center Head'
+                    titleEn:'User Center Head'
                 },
                 person_center_nav:{
                     title:'个人中心导航',
-                    titleEn:'Personal Center Navigation'
+                    titleEn:'User Center Navigation'
                 }
             }
         },

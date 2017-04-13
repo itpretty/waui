@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WA UI</title>
+    <title>搜索</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
@@ -13,25 +13,35 @@
     <link rel="stylesheet" href="../css/mobile.css"/>
 </head>
 <body ontouchstart>
-<div id="waui">
+<div id="wa-search">
     <!--<wa-search-msg></wa-search-msg>-->
    <!-- <wa-searchbar></wa-searchbar>--><!--顶部搜索框组件 weui默认的样式  没有搜索按钮的-->
     <!--text:输入框默认显示的提示性文字
     go-page：跳转页面,如果不跳转默认为“null”必须写
     doSomething()是要执行的原生事件的名字 -->
     <wa-search-default text="搜索你想找的商品名称" go-page="null" @click.native="waNativeSearch()"></wa-search-default><!--大麦场内容搜索-->
-    <wa-footer-nav :nav-list="footerData" @click.native="waFooterNavGo()"></wa-footer-nav><!--底部导航-->
 </div>
 <script src="../js/jquery-2.1.4.js"></script>
 <script src="../js/fastclick.js"></script>
 <script src="../js/vue.js"></script>
 <script src="../js/global.js"></script>
 <script src="../js/wa_Component.js"></script>
-<script>
-    $(function() {
-        
-    });
-</script>
 <script src="../lib/jquery-ui/js/jquery-weui.js"></script>
+<script>
+    var waFooterBar=new Vue({
+        el:'#wa-search',
+        data:{
+            goPage: "page.html"
+        },
+        methods: {
+            waNativeSearch: function () {//定义搜索按钮的原生方法
+                console.log("doSomething  content");
+            },
+            waFooterNavGo: function () {//底部导航不跳转的原生方法
+                console.log("do something ...");
+            }
+        }
+    })
+</script>
 </body>
 </html>

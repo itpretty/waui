@@ -3,17 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>底部导航</title>
-    <link rel="stylesheet" href="../css/weui.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../lib/weui/css/weui.css">
     <link rel="stylesheet" href="../lib/jquery-ui/css/jquery-weui.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link href="../css/mobile.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/mobile.css"/>
 </head>
 <body>
-
+<div id="wa-footer-bar">
+    <wa-footer-nav :nav-list="footerData" @click.native="waFooterNavGo()"></wa-footer-nav><!--底部导航-->
+</div>
 <script src="../js/vue.js"></script>
 <script src="../js/wa_Component.js"></script>
+<script src="../js/jquery-2.1.4.js"></script>
+<script src="../js/fastclick.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/wa_Component.js"></script>
+<script src="../lib/jquery-ui/js/jquery-weui.js"></script>
 <script>
-
+    var waFooterBar=new Vue({
+        el:'#wa-footer-bar',
+        data:{
+            footerData: [],//底部导航的数据
+        },
+        methods: {
+            waNativeSearch: function () {//定义搜索按钮的原生方法
+                console.log("doSomething  content");
+            },
+            waFooterNavGo: function () {//底部导航不跳转的原生方法
+                console.log("do something ...");
+            }
+        },
+        created: function () {
+            var self = this;
+            $.ajax({
+                type: 'GET',
+                url: wa.path.root() + 'data/footerNavData.json',//底部导航的数据文件地址
+                dataType: 'json',
+                success: function (requestdata) {
+                    console.log(requestdata.todoList)
+                    self.footerData = requestdata.todoList;
+                },
+                error: function (xhr, type) {
+                    $.alert(this.url + '<br/>' + 'Ajax error!')
+                }
+            })
+        }
+    })
 </script>
 </body>
 </html>

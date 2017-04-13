@@ -133,38 +133,5 @@ Vue.component('wa-poster-head', {
     props: ["background", "height", "account", "href", "accounttext", "avatar", "styleobject"],
 })
 
-/*创建根实例*/
-new Vue({
-    el: '#waui',
-    data: {
-        footerData: [],//底部导航的数据
-        tId: 0,
-        imgurl: wa.path.root() + "images/dmc-banner.jpg",
-        goPage: "page.html"
-    },
-    methods: {
-        waNativeSearch: function () {//定义搜索按钮的原生方法
-            console.log("doSomething  content");
-        },
-        waFooterNavGo: function () {//底部导航不跳转的原生方法
-            console.log("do something ...");
-        }
-    },
-    created: function () {
-        var self = this;
-        $.ajax({
-            type: 'GET',
-            url: wa.path.root() + 'data/footerNavData.json',//底部导航的数据文件地址
-            dataType: 'json',
-            success: function (requestdata) {
-                console.log(requestdata.todoList)
-                self.footerData = requestdata.todoList;
-            },
-            error: function (xhr, type) {
-                $.alert(this.url + '<br/>' + 'Ajax error!')
-            }
-        })
-    }
-})
 
 

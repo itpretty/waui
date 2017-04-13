@@ -110,21 +110,9 @@
 <script src="../js/global.js"></script>
 <script src="../js/wa_Component.js"></script>
 <script>
-    $(function () {
-        FastClick.attach(document.body);
-    });
     var waTab = new Vue({
         el: '#wa-tab',
-
-
-
-
-
-
-
-
-
-        data: {
+     data: {
             imgurl: [],
             waProductListTabOne: [],
             waProductListTabTwo: [],
@@ -143,9 +131,7 @@
                 url: wa.path.root() + 'data/productList.json',//底部导航的数据文件地址
                 dataType: 'json',
                 success: function (requestdata) {
-                    console.log(this.url)                    self.waProductListTabOne= requestdata.waProductListFirst;
-
-
+                    console.log(this.url);
                     self.waProductListTabOne = requestdata.waProductListFirst;
                     self.waProductListTabTwo = requestdata.waProductListSecond;
                     self.waProductListTabThree = requestdata.waProductListThree;

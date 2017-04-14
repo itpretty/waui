@@ -132,14 +132,15 @@ Vue.component('wa-poster-head', {
     </div>',
     props: ["background", "height", "account", "href", "accounttext", "avatar", "styleobject"],
 })
+
 Vue.directive('scroll', {
     bind: function (el, binding) {
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', wa.util.debounce(function () {
             var sTop =  document.documentElement.scrollTop == 0 ? document.body.scrollTop : document.documentElement.scrollTop;
             if (sTop + window.innerHeight >= el.clientHeight) {
                 binding.value.call(this)
             }
-        })
+        }, 200))
     }
 })
 

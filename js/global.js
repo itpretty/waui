@@ -15,7 +15,12 @@ wa.path = {
         // Qiaoting Li
         host: 'localhost:63342',
         root: '/new_waui/'
-      }
+      },
+        {
+            // Qiaoting Li
+            host: '192.168.5.131',
+            root: '/new_waui/'
+        }
     ];
     var mapping = function(){
       var host = window.location.host;

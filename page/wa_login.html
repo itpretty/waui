@@ -14,17 +14,6 @@
 </head>
 <body>
 <div id="wa-login">
-    <!--find-pass-word:找回密码按钮的链接
-    login-page：登陆按钮的链接-->
-    <!--<input class="weui-input" type="password" v-va:Password tag="登录密码" v-model.trim="Password" placeholder="请输入登录密码" >-->
-    <!--<validator name="validation">-->
-        <!--<label for="username">telphone:</label>-->
-        <!--<input type="text" id="tel" v-validate:telphone="{ pattern: '/^[0-9]{11}$/' }">-->
-        <!--<div class="">-->
-            <!--<p v-if="$validation.telphone.pattern">您输入的手机号码不对</p>-->
-        <!--</div>-->
-    <!--</validator>-->
-    <!--<wa-login phone-text="请输入手机号码" veri-code-text="输入验证码" find-pass-word="Password.html" login-page="membercenter.html"></wa-login>-->
     <validator name="validationLogin">
         <div class="member">
         <div class="member-logo"><img :src="loginSrcImg" alt=""/></div>
@@ -34,7 +23,6 @@
                     <dt><span class="icon-ico24"></span></dt>
                     <dd>
                         <input name="textfield" type="text" class="Memberin" id="phone" :placeholder="phonePlaceholderText"  v-validate:telphone="['telphone']" >
-                        <!--<p v-if="$validation.telphone.pattern">您输入的手机号码不对</p>-->
                     </dd>
                 </dl>
                 <dl>

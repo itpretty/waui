@@ -18,13 +18,21 @@
 <body>
 <div id="wa-home">
     <wa-img :src="logoSrc" :href="logoHref"></wa-img>
-    <div class="weui-cells">
-        <a v-for="page in pages" @click="go($key)" class="weui-cell weui-cell_access" href="javascript:;">
-            <div class="weui-cell__bd">
-                <p v-cloak>{{ page.title}}</p>
+    
+    <div v-for="category in pageSet"class="weui-panel">
+        <div class="weui-panel__hd">{{ category.title }}</div>
+        <div class="weui-panel__bd">    
+          <div class="weui-media-box weui-media-box_small-appmsg">
+            <div class="weui-cells">
+                <a v-for="page in category.pages" @click="go($key)" class="weui-cell weui-cell_access" href="javascript:;">
+                    <div class="weui-cell__bd weui-cell_primary">
+                        <p v-cloak>{{ page.title}}</p>
+                    </div>
+                    <span class="weui-cell__ft" v-cloak>{{ page.titleEn }}</span>
+                </a>
             </div>
-            <div class="weui-cell__ft" v-cloak>{{ page.titleEn }}</div>
-        </a>
+          </div>
+        </div>
     </div>
 
     <div class="weui-footer">
@@ -50,42 +58,57 @@
             logoSrc: 'doc/logo-waui.png',
             logoHref: 'https://github.com/itpretty/waui',
             copyRightYear: (new Date()).getFullYear(),
-            pages: {
-                login: {
-                    title: '登录',
-                    titleEn: 'Login'
+            pageSet: {
+                beforeLogin: {
+                  title: '注册登录页面 Sign in/up',
+                  pages: {
+                    login: {
+                      title: '登录',
+                      titleEn: 'Login'
+                    },
+                    register: {
+                        title: '注册',
+                        titleEn: 'Register'
+                    },
+                    registerContent: {
+                        title: '注册详情',
+                        titleEn: 'Registration Detail'
+                    },
+                  }
                 },
-                register: {
-                    title: '注册',
-                    titleEn: 'Register'
+                afterLogin: {
+                  title: '登录后页面 Inner Pages',
+                  pages: {
+                    person_center_head:{
+                        title:'个人中心头部',
+                        titleEn:'User Center Head'
+                    },
+                    person_center_nav:{
+                        title:'个人中心导航',
+                        titleEn:'User Center Navigation'
+                    }
+                  }
                 },
-                registerContent: {
-                    title: '注册详情',
-                    titleEn: 'Registration Detail'
-                },
-                searchBar: {
-                    title: '搜索',
-                    titleEn: 'Search'
-                },
-                footer_nav:{
-                    title:'底部导航',
-                    titleEn:'Bottom Navigation'
-                },
-                tnTab: {
-                    title: '切换',
-                    titleEn: 'Tab'
-                },
-                img: {
-                    title: '图片',
-                    titleEn: 'Image'
-                },
-                person_center_head:{
-                    title:'个人中心头部',
-                    titleEn:'User Center Head'
-                },
-                person_center_nav:{
-                    title:'个人中心导航',
-                    titleEn:'User Center Navigation'
+                misc: {
+                  title: '单一功能页面 Misc Demos',
+                  pages: {
+                    searchBar: {
+                        title: '搜索',
+                        titleEn: 'Search'
+                    },
+                    footer_nav:{
+                        title:'底部导航',
+                        titleEn:'Bottom Navigation'
+                    },
+                    tnTab: {
+                        title: '切换',
+                        titleEn: 'Tab'
+                    },
+                    img: {
+                        title: '图片',
+                        titleEn: 'Image'
+                    }
+                  }
                 }
             }
         },

@@ -85,7 +85,7 @@
                             url: wa.path.root() + 'data/productListScroll' + _this.currPage + '.json',
 //                        dataType: 'jsonp',
                             success: function (data) {
-                                _this.waProductList.push(...data.waProductListScroll)//此处...必须写，但是不知道为什么
+                                _this.waProductList = _this.waProductList.concat(data.waProductListScroll)
                                 console.log("methods"+_this.waProductList)
                                 _this.currPage += 1
                                 // 请求成功后将 scrollDisable 设置为 false，表示又可以加载数据了

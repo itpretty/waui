@@ -134,14 +134,29 @@ Vue.component('wa-poster-head', {
 })
 
 Vue.directive('scroll', {
+        bind: function (el, binding) {
+            window.addEventListener('scroll', wa.util.debounce(function () {
+                var sTop =  document.documentElement.scrollTop == 0 ? document.body.scrollTop : document.documentElement.scrollTop;
+                if (sTop + window.innerHeight >= el.clientHeight) {
+                    binding.value.call(this)
+                }
+            },200))
+        }
+})
+/*Vue.directive('scroll', {
     bind: function (el, binding) {
-        window.addEventListener('scroll', wa.util.debounce(function () {
-            var sTop =  document.documentElement.scrollTop == 0 ? document.body.scrollTop : document.documentElement.scrollTop;
-            if (sTop + window.innerHeight >= el.clientHeight) {
+        var wrapper  = document.querySelector("."+el.className)
+        var container = document.querySelector('.'+el.children[0].className)
+        console.log(el.children[0].className+";;"+wrapper)
+        wrapper.addEventListener('scroll', wa.util.debounce(function () {
+            var scrollTop = wrapper.scrollTop;
+            if (scrollTop + wrapper.clientHeight >= container.clientHeight)  {
+                console.log(binding.value)
                 binding.value.call(this)
             }
-        }, 200))
+        },200))
     }
-})
+})*/
+
 
 

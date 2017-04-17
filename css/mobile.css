@@ -144,3 +144,9 @@ input:focus{outline: none; }
 .member-nav dl dd{ border-bottom:1px solid #e0e0e0;}
 .member-nav dl dd span{ float:right; color:#aeaeae; padding:0.7rem 0 0 0;}
 .member-nav dl dd a{ display:block;}
+/*倒计时*/
+.End-time{ background:#fff; border-bottom:1px solid #e0e0e0; padding:10px 0 15px 0; text-align:center; color:#323232; font-size:0.7rem;}
+.End-time dl dt{ padding:0 0 8px 0;}
+.End-time dl dd span {color: red;display: inline-block;margin-left: 5px;}
+.End-time dl dd span i {background: #262626; font-style:inherit;border-radius: 4px; color: #fff;display: inline-block;padding: 0 3px;min-width:1rem;}
+.End-time dl dd span b{ color:#323232; padding:0 5px; font-weight:normal; }

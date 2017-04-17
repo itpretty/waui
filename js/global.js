@@ -51,7 +51,20 @@ wa.util = {
 	        timeout = setTimeout(later, wait);
 	        if (callNow) func.apply(context, args);
 	    };
-	}  
+	},
+    gettime:function (endtime) {
+        var EndTime = new Date(endtime); //截止时间
+        var NowTime = new Date();
+        var t = EndTime.getTime() - NowTime.getTime();
+        var timeArr=[];
+        var d = Math.floor(t / 1000 / 60 / 60 / 24)<10?"0"+Math.floor(t / 1000 / 60 / 60 / 24):Math.floor(t / 1000 / 60 / 60 / 24);
+        var h = Math.floor(t / 1000 / 60 / 60 % 24)<10?"0"+Math.floor(t / 1000 / 60 / 60 % 24):Math.floor(t / 1000 / 60 / 60 % 24);
+        var m = Math.floor(t / 1000 / 60 % 60)<10?"0"+Math.floor(t / 1000 / 60 % 60):Math.floor(t / 1000 / 60 % 60);
+        var s = Math.floor(t / 1000 % 60)<10?"0"+Math.floor(t / 1000 % 60):Math.floor(t / 1000 % 60);
+        console.log(d+"/"+h+"/"+m+"/"+s);
+        timeArr = timeArr.concat([d,h,m,s]);
+        return timeArr;
+    }
 }
 
 $(function() {

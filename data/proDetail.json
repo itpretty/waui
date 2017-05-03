@@ -1,0 +1,17 @@
+{
+  "imgUrl": "../images/img19.jpg",
+  "brief": "FIVERAMS 五花温和雪肌面膜温和雪肌面膜面膜温雪肌面膜面和雪25mL/片",
+  "price": "51.00",
+  "color": [
+    {"text":"浅蓝方块碎花","item":-1},
+    {"text":"浅红方块碎花","item":-1},
+    {"text":"蓝方块碎花","item":-1},
+    {"text":"红方块碎花","item":-1}
+  ],
+  "size": [
+    {"size":"160/M","item":-1},
+    {"size":"165/M","item":-1},
+    {"size":"170/M","item":-1},
+    {"size":"175/M","item":-1}
+  ]
+}
